@@ -1,12 +1,27 @@
 $font-family: "Poppins", sans-serif;
+$font-weight-bold:500;
+
 
 //Sidebar
-$sidebar-width: 210px;
+$sidebar-width: 240px;
+$brand-logo-height: 125px;
+$barnd-logo-padding-left: 2.25rem;
+$nav-item-spacing:1rem;
+$nav-link-padding-y: 0.5rem;
+$nav-link-padding-x: 2.25rem;
+
+$avatar-size:50px;
+// $nav-link-font-size:;
 
 //components
+$card-spacer-y:2rem;
+$card-spacer-x:2.5rem;
+$card-border-width:0px;
+$card-border-radius: 1.5rem;
 
-$card-padding: 1rem;
-$card-boader-radius: 25px;
+//form
+$input-border-radius: 0.625rem;
+$input-group-addon-bg: transparent;                  
 
 //revenue-stats
 $revenue-stats-width: 250px;
