@@ -1,7 +1,63 @@
+#menu-toggle {
+  display: none;
+
+  &:checked {
+    ~ #sidebar {
+      flex: 0 0 80px;
+      width: 80px;
+
+      .nav{
+        &-link{
+          padding-left: 1rem;
+          &-name{
+            transform: translateX(500px);
+          }
+        }
+      }
+
+      .user{
+        &-name{
+          transform: translateX(500);
+        }
+      }
+    }
+    ~ label {
+      left: 80px;
+    }
+  }
+}
+label {
+  position: absolute;
+  top: 20%;
+  left: $sidebar-width;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  border: 1px solid black;
+  background-color: $white;
+  z-index: 99;
+  span {
+    font-size: 2rem;
+  }
+  @include media-breakpoint-down(md){
+   left: 0;
+  }
+}
+
 #sidebar {
   flex: 0 0 $sidebar-width;
   max-width: $sidebar-width;
   border-right: 1px solid $outline;
+
+  @include media-breakpoint-down(md){
+    position: absolute;
+    top: 0;
+    left: -100%;
+    height: 100%;
+  }
 
   .bard-logo {
     height: $brand-logo-height;
@@ -12,11 +68,6 @@
   }
 
   .nav {
-    display: block;
-    &-item {
-      margin-bottom: $nav-item-spacing;
-    }
-
     &-link {
       border-left: 6px solid transparent;
       .icon {
@@ -34,58 +85,35 @@
     }
   }
 
-
-    .user {
-      margin-bottom: 2rem;
-      &-avatar {
-        position: relative;
-        width: $avatar-size;
-        height: $avatar-size;
-        padding: 0.375rem;
-        margin-bottom: 0.8rem;
-        border: 2px solid $outline;
-        border-radius: .725rem;
-        img {
-          border-radius: 8px;
-        }
-      }
-
-      &-status {
-        position: absolute;
-        bottom: 0px;
-        right: -5px;
-        height: 8px;
-        width: 8px;
-        background-color: green;
-        border: 1px solid $outline;
-        border-radius: 50%;
-      }
-
-      &-name {
-        letter-spacing: 0;
-        font-size: $font-size-lg;
-        font-weight: $font-weight-bold;
+  .user {
+    &-avatar {
+      position: relative;
+      width: $avatar-size;
+      height: $avatar-size;
+      padding: 0.375rem;
+      margin-bottom: 0.8rem;
+      border: 2px solid $outline;
+      border-radius: 0.725rem;
+      img {
+        border-radius: 8px;
       }
     }
-}
 
-.hamburger-lines {
-  display: block;
-  height: 26px;
-  width: 32px;
-  position: absolute;
-  top: 17px;
-  left: 20px;
-  z-index: 2;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
+    &-status {
+      position: absolute;
+      bottom: 0px;
+      right: -5px;
+      height: 8px;
+      width: 8px;
+      background-color: green;
+      border: 1px solid $outline;
+      border-radius: 50%;
+    }
 
-.hamburger-lines .line {
-  display: block;
-  height: 4px;
-  width: 100%;
-  border-radius: 10px;
-  background: #0e2431;
+    &-name {
+      letter-spacing: 0;
+      font-size: $font-size-lg;
+      font-weight: $font-weight-bold;
+    }
+  }
 }
