@@ -1,0 +1,11 @@
+.revenue-stats{
+    flex: 0 0 300px;
+    width: 300px;
+    background-color: $primary;
+    color: white;
+    border-radius: 1.5rem;
+
+    @include media-breakpoint-down(lg) {
+        width: 100%;
+    }
+}

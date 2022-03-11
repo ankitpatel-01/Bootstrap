@@ -6,23 +6,15 @@
     }
     input{
       border-left: 0;
-      &:focus{
-        outline: none;
-        box-shadow: none;
-      }
     }
   }
   &.filter {
-    width: 100px;
+    width: 110px;
     .input-group-text{
       border-left: 0;
     }
     input{
       border-right: 0;
-      &:focus{
-        outline: none;
-        box-shadow: none;
-      }
     }
   }
   
