@@ -4,7 +4,7 @@
   &:checked {
     ~ #sidebar {
       flex: 0 0 80px;
-      width: 80px;
+      // width: 80px;
 
       @include media-breakpoint-down(lg) {
         width: $sidebar-width;
@@ -25,14 +25,18 @@
         &-link {
           padding-left: 1rem;
           &-name {
-            transform: translateX(500px);
+            @include media-breakpoint-up(lg) {
+              transform: translateX(500px);
+            }
           }
         }
       }
 
       .user {
         &-name {
-          transform: translateX(500);
+          @include media-breakpoint-up(lg) {
+            transform: translateX(500px);
+          }
         }
       }
     }
@@ -97,6 +101,7 @@ label {
 
   .nav {
     &-link {
+      display: flex;
       white-space: nowrap;
       border-left: 6px solid transparent;
       .icon {
@@ -115,6 +120,7 @@ label {
   }
 
   .user {
+    white-space: nowrap;
     &-avatar {
       position: relative;
       width: $avatar-size;
